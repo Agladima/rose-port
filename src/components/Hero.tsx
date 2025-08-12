@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
                 <span className="stat-label">Projects Delivered</span>
               </div>
               <div className="stat">
-                <span className="stat-number">300%</span>
+                <span className="stat-number">100%</span>
                 <span className="stat-label">Avg Growth Rate</span>
               </div>
               <div className="stat">

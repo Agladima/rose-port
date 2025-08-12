@@ -1,44 +1,63 @@
-import React from 'react';
-import './Experience.css';
+import React from "react";
+import "./Experience.css";
 
 const Experience: React.FC = () => {
   const experiences = [
     {
-      title: "Senior Project Manager & Growth Lead",
-      company: "TechFlow Solutions",
-      period: "2022 - Present",
-      location: "San Francisco, CA",
+      title: "Project Manager",
+      company: "African Work Summit",
+      period: "2025",
+      location: "Lagos, Nigeria",
       achievements: [
-        "Led cross-functional teams of 12+ members to deliver 15 high-impact projects worth $1.2M+",
-        "Implemented growth strategies that increased user acquisition by 250% in 18 months",
-        "Reduced project delivery time by 35% through process optimization and agile methodologies",
-        "Managed product launches reaching 100K+ users with 98% uptime"
-      ]
+        "Led cross-functional planning and execution of a 2-day summit in Lagos (1,200+ attendees, 37 speakers, 20 partners, 8 exhibitors), managing 7 team leads and a 30+ member team for seamless pre-event planning and on-ground delivery.",
+        "Secured strategic partnerships and collaborations with 20+ brands and organizations, designed event flow and master plan, and aligned goals across multiple teams to meet timelines and impact targets.",
+        "Oversaw operations, risk management, and performance tracking using Asana, Google Sheets, and Zoho, ensuring real-time issue resolution and an exceptional experience for guests and stakeholders.",
+      ],
     },
     {
-      title: "Project Manager & Marketing Specialist",
-      company: "Digital Innovations Inc.",
-      period: "2020 - 2022",
-      location: "New York, NY",
+      title: "Programs Associate",
+      company: "Co-creation HUB",
+      period: "01/2025 - 05/2025",
+      location: "Lagos, Nigeria",
       achievements: [
-        "Coordinated 8 concurrent projects with budgets ranging from $50K to $300K",
-        "Developed and executed marketing campaigns that generated $800K in revenue",
-        "Improved customer retention rate by 45% through data-driven engagement strategies",
-        "Established project management frameworks adopted across 3 departments"
-      ]
+        "Managed and supported a virtual network of 18 Campus Ambassadors across six universities, tracking KPIs via a performance dashboard, ensuring program accountability, and facilitating the launch of campus-based Online Safety Communities.",
+        "Coordinated and executed nationwide Safe Online digital literacy initiatives, educating 11,000+ Nigerians through trainings, campus pop-up events, and stakeholder collaborations, while overseeing logistics, budgeting, and publicity.",
+        "Led data collection, monitoring, and reporting, including EdTech Readiness Surveys, ongoing M&E surveys, and comprehensive program reports with actionable recommendations for improved student digital safety engagement.",
+      ],
     },
     {
-      title: "Junior Project Coordinator",
-      company: "StartUp Accelerator",
-      period: "2019 - 2020",
-      location: "Austin, TX",
+      title: "Programs/Operations Officer",
+      company: "Civic-Verse[PoliZ]",
+      period: "2024",
+      location: "Lagos, Nigeria",
       achievements: [
-        "Supported 20+ startup projects from ideation to market launch",
-        "Organized investor pitch events with 90% funding success rate",
-        "Created project tracking systems that improved transparency by 60%",
-        "Mentored 5 junior team members in project management best practices"
-      ]
-    }
+        "Oversaw program development and operations for PoliZ, ensuring alignment with its mission to make policy and governance accessible and engaging.",
+        "Coordinated logistics, partnerships, and communications, while leading operational strategy to enhance program scalability and impact in civic engagement and policy.",
+        "Managed and executed key initiatives—including virtual workshops, community hangouts, and Twitter Spaces—driving active participation and community growth.",
+      ],
+    },
+    {
+      title: "Business Development Manager",
+      company: "Opay",
+      period: "12/2023 - 03/2024",
+      location: "Lagos, Nigeria",
+      achievements: [
+        "Led and supported ambassadors to stay on track with objectives, fostering continuous engagement and performance improvements.",
+        "Implemented an efficient ambassador tracking system to identify inactivity, boost task performance, and ensure alignment with company goals.",
+        "Generated high-quality leads with strong conversion rates, driving sales growth and increased product adoption in the designated area.",
+      ],
+    },
+    {
+      title: "Business Development Officer",
+      company: "Cybertron Advertising Agency",
+      period: "2024",
+      location: "Lagos, Nigeria",
+      achievements: [
+        "Collaborated with screen owners to oversee and optimize screen performance, driving growth through effective client engagement.",
+        "Led B2B and B2C sales efforts for digital out-of-home advertising, focusing on strategic lead generation and high conversion rates.",
+        "Managed client relationships and sales pipelines, delivering tailored advertising solutions for businesses via programmatic digital screens.",
+      ],
+    },
   ];
 
   return (
@@ -46,7 +65,10 @@ const Experience: React.FC = () => {
       <div className="container">
         <div className="section-header text-center">
           <h2>Professional Experience</h2>
-          <p>A track record of delivering exceptional results across diverse industries</p>
+          <p>
+            A track record of delivering exceptional results across diverse
+            industries
+          </p>
         </div>
 
         <div className="experience-timeline">
@@ -77,29 +99,16 @@ const Experience: React.FC = () => {
           ))}
         </div>
 
-        <div className="experience-summary">
-          <div className="summary-grid">
-            <div className="summary-card">
-              <div className="summary-icon">📈</div>
-              <h4>Revenue Impact</h4>
-              <p>Generated over $2.5M in revenue through strategic project delivery and growth initiatives</p>
-            </div>
-            <div className="summary-card">
-              <div className="summary-icon">⚡</div>
-              <h4>Efficiency Gains</h4>
-              <p>Consistently improved operational efficiency by 30-40% through process optimization</p>
-            </div>
-            <div className="summary-card">
-              <div className="summary-icon">👥</div>
-              <h4>Team Leadership</h4>
-              <p>Led diverse teams ranging from 5-15 members across multiple departments and time zones</p>
-            </div>
-            <div className="summary-card">
-              <div className="summary-icon">🎯</div>
-              <h4>Success Rate</h4>
-              <p>Maintained 98% project success rate while consistently delivering on time and under budget</p>
-            </div>
-          </div>
+        <div className="text-center" style={{ marginTop: "30px" }}>
+          <a
+            href="/cv.pdf"
+            download="Ephraim.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
+            See More / Download CV
+          </a>
         </div>
       </div>
     </section>
