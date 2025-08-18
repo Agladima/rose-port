@@ -27,10 +27,12 @@ const Hero: React.FC = () => {
             <h1 className="hero-name">Ephraim Ephraim</h1>
             <h2 className="hero-title">Project Manager & Growth Marketer</h2>
             <p className="hero-description">
-              Driving digital transformation and sustainable growth through
-              strategic project management and data-driven marketing
-              initiatives. I help businesses scale efficiently while delivering
-              exceptional user experiences.
+              I am a Project Manager and Growth Strategist with a proven ability
+              to bring structure, clarity, and measurable results to complex
+              initiatives. My expertise spans Project Management, Product
+              Management, Offline Marketing, BTL Marketing, and Brand Activation
+              enabling me to seamlessly guide projects from concept to delivery
+              while creating impactful user and customer experiences.
             </p>
             <div className="hero-cta">
               <button className="btn btn-primary" onClick={scrollToContact}>

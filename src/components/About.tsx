@@ -11,9 +11,13 @@ const About: React.FC = () => {
         <div className="about-intro-text">
           <h2>Turning Ideas into Impact</h2>
           <p>
-            I help brands and organizations bridge the gap between strategy and
-            execution — blending creativity, data, and purpose to deliver
-            measurable results.
+            I hold a Bachelor in Education and Political Science from the
+            University of Calabar and have earned certifications in both Product
+            and Project Management. Over the years, I have gained extensive
+            experience across diverse sectors, including EdTech, Civic-tech,
+            FinTech and Advertisement. Currently, I freelance as a Project
+            Manager, where I lead cross-functional teams, implement agile
+            practices, and ensure impactful outcomes.
           </p>
         </div>
       </div>
