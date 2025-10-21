@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import {
   Mail,
@@ -7,6 +8,7 @@ import {
   Send,
   CheckCircle2,
   XCircle,
+  RefreshCcw,
 } from "lucide-react";
 import "./Contact.css";
 
@@ -20,20 +22,49 @@ const Contact: React.FC = () => {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    setSubmitStatus("idle");
+
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const text = await res.text(); // read raw text
+      let data = null;
+      try {
+        data = JSON.parse(text);
+      } catch {
+        console.error("❌ Response not JSON:", text);
+      }
+
+      if (res.ok && data?.success) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (err) {
+      console.error("Submission Error:", err);
+      setSubmitStatus("error");
+    } finally {
       setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setSubmitStatus("idle"), 4000);
-    }, 2000);
+    }
+  };
+
+  const handleResend = async () => {
+    await handleSubmit(new Event("submit") as any);
   };
 
   const contactInfo = [
@@ -72,6 +103,7 @@ const Contact: React.FC = () => {
         </p>
 
         <div className="contact-grid">
+          {/* Contact Info Cards */}
           <div className="contact-cards">
             {contactInfo.map((info, i) => (
               <div className="contact-card" key={i}>
@@ -100,6 +132,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
+          {/* Contact Form */}
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Full Name</label>
@@ -151,9 +184,17 @@ const Contact: React.FC = () => {
                 <CheckCircle2 size={20} /> Message sent successfully!
               </div>
             )}
+
             {submitStatus === "error" && (
               <div className="form-status error">
-                <XCircle size={20} /> Something went wrong. Try again.
+                <XCircle size={20} /> {errorMsg || "Something went wrong."}
+                <button
+                  type="button"
+                  className="resend-btn"
+                  onClick={handleResend}
+                >
+                  <RefreshCcw size={16} /> Resend
+                </button>
               </div>
             )}
           </form>
