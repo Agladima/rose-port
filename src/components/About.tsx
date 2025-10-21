@@ -1,47 +1,50 @@
 import React from "react";
 import "./About.css";
+import aboutImg from "../assets/delams.jpg";
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="section about">
-      <div className="about-hero">
+    <section id="about" className="about-section">
+      {/* Intro Section */}
+      <div className="about-intro container">
         <div className="about-image">
-          <img src="/favicon.jpg" alt="Your Name" />
+          <div className="image-frame">
+            <img src={aboutImg} alt="Ephraim" className="about-photo" />
+            <div className="img-overlay"></div>
+          </div>
         </div>
-        <div className="about-intro-text">
-          <h2>Turning Ideas into Impact</h2>
+
+        <div className="about-text">
+          <h2 className="about-heading gradient-text">
+            Turning Ideas into Impact
+          </h2>
           <p>
             I hold a Bachelor in Education and Political Science from the
-            University of Calabar and have earned certifications in both Product
-            and Project Management. Over the years, I have gained extensive
-            experience across diverse sectors, including EdTech, Civic-tech,
-            FinTech and Advertisement. Currently, I freelance as a Project
-            Manager, where I lead cross-functional teams, implement agile
-            practices, and ensure impactful outcomes.
+            University of Calabar and certifications in Product and Project
+            Management. I’ve worked across EdTech, Civic-tech, FinTech, and
+            Advertisement — leading cross-functional teams, implementing agile
+            practices, and creating measurable growth.
           </p>
         </div>
       </div>
 
-      <div className="about-metrics">
-        <div className="metric">
-          <h3>$2.5M+</h3>
-          <p>Revenue Generated</p>
-        </div>
-        <div className="metric">
-          <h3>15+</h3>
-          <p>Team Members Led</p>
-        </div>
-        <div className="metric">
-          <h3>98%</h3>
-          <p>Project Success Rate</p>
-        </div>
-        <div className="metric">
-          <h3>40%</h3>
-          <p>Efficiency Improvement</p>
-        </div>
+      {/* Metrics Section */}
+      <div className="about-metrics container">
+        {[
+          { value: "$2.5M+", label: "Revenue Generated" },
+          { value: "15+", label: "Team Members Led" },
+          { value: "98%", label: "Project Success Rate" },
+          { value: "40%", label: "Efficiency Improvement" },
+        ].map((m, i) => (
+          <div className="metric-card" key={i}>
+            <h3>{m.value}</h3>
+            <p>{m.label}</p>
+          </div>
+        ))}
       </div>
 
-      <div className="about-strengths">
+      {/* Strengths */}
+      <div className="about-strengths container">
         <div className="strength-card">
           <span className="icon">🎯</span>
           <h4>Strategic Focus</h4>
@@ -59,17 +62,20 @@ const About: React.FC = () => {
         </div>
       </div>
 
-      <div className="about-story">
-        <h3>My Journey</h3>
+      {/* Journey */}
+      <div className="about-journey container">
+        <h3 className="gradient-text">My Journey</h3>
         <p>
-          Over the past 5+ years, I’ve worked across marketing, project
-          management, and community building — helping businesses and
-          organizations grow while staying true to their values.
+          Over the past 5+ years, I’ve worked in marketing, project management,
+          and community building — helping businesses grow while staying true to
+          their values. I thrive on translating complex ideas into actionable
+          results.
         </p>
       </div>
 
-      <div className="about-values">
-        <h3>Core Values</h3>
+      {/* Values */}
+      <div className="about-values container">
+        <h3 className="gradient-text">Core Values</h3>
         <div className="values-grid">
           <div className="value-card">
             <h4>Collaboration</h4>
